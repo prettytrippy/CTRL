@@ -1,0 +1,4 @@
+Input(a, 0)
+Input(b, 0)
+Assign(n, Add(Mul(Gt($a, $b), $a), Mul(Gt($b, $a), $b)))
+Print(n, $n)
