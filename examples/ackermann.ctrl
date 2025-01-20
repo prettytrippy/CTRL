@@ -1,0 +1,57 @@
+Assign(m, 2)
+Assign(n, 2)
+
+Assign(stack_start, 100)
+Assign(stack_len, $stack_start)
+
+Write($m, $stack_len)
+Assign(stack_len, Add($stack_len, 1))
+
+Write($n, $stack_len)
+# Assign(stack_len, Add($stack_len, 1))
+
+# Check if we're done
+Assign(done, Eq($stack_len, $stack_start))
+Assign(ctrl, Add($ctrl, Mul($done, 39)))
+
+Read(n, $stack_len)
+Assign(stack_len, Sub($stack_len, 1))
+
+Read(m, $stack_len)
+Assign(stack_len, Sub($stack_len, 1))
+
+# Conditionals 
+Assign(ctrl, Add($ctrl, Mul(Eq(0, $m), 25)))
+Assign(ctrl, Add($ctrl, Mul(Eq(0, $n), 14)))
+
+# Last conditional
+Write(Sub($m, 1), $stack_len)
+Assign(stack_len, Add($stack_len, 1))
+
+Write($m, $stack_len)
+Assign(stack_len, Add($stack_len, 1))
+
+Write(Sub($n, 1), $stack_len)
+# Assign(stack_len, Add($stack_len, 1))
+
+Assign(ctrl, Sub($ctrl, 25))
+
+# Second conditional
+Write(Sub($m, 1), $stack_len)
+Assign(stack_len, Add($stack_len, 1))
+
+Write(1, $stack_len)
+# Assign(stack_len, Add($stack_len, 1))
+
+Print(n-, $n)
+Assign(ctrl, Sub($ctrl, 34))
+
+# First conditonal
+Write(Add($n, 1), $stack_len)
+# Assign(stack_len, Add($stack_len, 1))
+
+Assign(ctrl, Sub($ctrl, 40))
+
+# Done!
+Read(n, $stack_len)
+Print(n, $n)

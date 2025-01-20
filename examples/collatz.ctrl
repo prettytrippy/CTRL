@@ -6,4 +6,5 @@ Assign(n, Add($n, Mul($odd, 1)))
 Assign(n, Sub($n, Mul(Div($n, 2), $even)))
 Assign(done, Ne($n, 1))
 Print(n, $n)
-Assign(ctrl, Sub($ctrl, Mul($done, 8)))
+# Set control back 9 lines if we aren't done
+Assign(ctrl, Sub($ctrl, Mul($done, 9)))
